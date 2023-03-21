@@ -33,10 +33,10 @@ return res;
 }
 
 void DeleteAdptArray(PAdptArray p_arr){
-    if(p_arr == NULL){
+if(p_arr == NULL){
         return;
-    }
-    for (size_t i = 0; i < p_arr->size; i++)
+  }
+ for (size_t i = 0; i < p_arr->size; i++)
     {
         if (p_arr->arr[i] != NULL)
         {
@@ -44,8 +44,8 @@ void DeleteAdptArray(PAdptArray p_arr){
         }
     
     }
-    free(p_arr->arr);
-    free(p_arr);
+ free(p_arr->arr);
+ free(p_arr);
     
 }
 
