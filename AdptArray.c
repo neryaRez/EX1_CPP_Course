@@ -33,9 +33,10 @@ return res;
 }
 
 void DeleteAdptArray(PAdptArray p_arr){
-if(p_arr == NULL){
-        return;
-  }
+if(p_arr == NULL)
+{
+    return;
+}
  for (size_t i = 0; i < p_arr->size; i++)
     {
         if (p_arr->arr[i] != NULL)
@@ -51,27 +52,27 @@ if(p_arr == NULL){
 
 Result SetAdptArrayAt(PAdptArray p_arr, int index, PElement newElement){
 
-    if (p_arr == NULL) 
-	{
-		return FAIL;
-	}
+if (p_arr == NULL) 
+{
+   return FAIL;
+}
 PElement* newpElemArr;
-    if (index >= p_arr->size)
-	    {
-		if ((newpElemArr = (PElement*)calloc((index + 1), sizeof(PElement))) == NULL) 
-		{
-			return FAIL;
-		}
-		memcpy(newpElemArr, p_arr->arr, (p_arr->size) * sizeof(PElement));
-		free(p_arr->arr);
-		p_arr->arr = newpElemArr;
+if (index >= p_arr->size)
+{
+	if ((newpElemArr = (PElement*)calloc((index + 1), sizeof(PElement))) == NULL) 
+	{
+	    return FAIL;
+	}
+	memcpy(newpElemArr, p_arr->arr, (p_arr->size) * sizeof(PElement));
+	free(p_arr->arr);
+	p_arr->arr = newpElemArr;
         p_arr->size = index + 1;
-	    }
+}
 
 if (p_arr->arr[index] != NULL) 
-	{
-		p_arr->del((p_arr->arr)[index]);
-	}
+{
+    p_arr->del((p_arr->arr)[index]);
+}
 p_arr->arr[index] = p_arr->copy(newElement);
 	
 return SUCCESS;
@@ -93,14 +94,16 @@ return p_arr->copy(p_arr->arr[index]);
 }
 
 int GetAdptArraySize(PAdptArray p_arr){
-    if (p_arr == NULL)
-    {
-        return -1;
-    }
-    if (p_arr->size == 0 && p_arr->arr[0] == NULL){
-        return 0;
-    }
-    return p_arr->size;
+if (p_arr == NULL)
+{
+    return -1;
+}
+if (p_arr->size == 0 && p_arr->arr[0] == NULL)
+{
+    return 0;
+}
+	
+return p_arr->size;
     
 }
 
