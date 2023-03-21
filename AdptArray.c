@@ -52,7 +52,7 @@ if(p_arr == NULL)
 
 Result SetAdptArrayAt(PAdptArray p_arr, int index, PElement newElement){
 
-if (p_arr == NULL) 
+if (p_arr == NULL || index < 0 || newElement == NULL) 
 {
    return FAIL;
 }
